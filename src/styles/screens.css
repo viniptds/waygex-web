@@ -1,0 +1,65 @@
+/* Sample app screens (data-ui). They keep interface conventions: small labels, hairlines between rows. */
+.ui {
+  font-family: var(--font);
+  font-size: 13px; line-height: 1.35; letter-spacing: -0.005em;
+  color: var(--navy);
+  text-align: left;
+}
+.ui p { max-width: none; }
+.ui b { font-weight: 600; }
+
+/* Cards */
+.ui-card { width: 100%; padding: 0.95rem 1rem 1rem; border-radius: 10px; background: var(--white); }
+.ui-card-dark { background: #2c2760; color: var(--paper); }
+.ui-card-title { margin-bottom: 0.55rem; font-size: 14px; font-weight: 600; }
+.ui-list li { display: flex; gap: 0.55rem; align-items: baseline; padding: 0.3rem 0; }
+.ui-list li::before { content: ''; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--magenta); transform: translateY(-1px); }
+.ui-rows li { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; padding: 0.42rem 0; }
+.ui-rows b { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ui-rows-lined li + li { border-top: 1px solid rgb(35 31 77 / 0.12); } /* taste-skill-ignore: data-ui */
+.ui-card-dark .ui-rows-lined li + li { border-top-color: rgb(255 255 255 / 0.14); } /* taste-skill-ignore: data-ui */
+.ui-foot { margin-top: 0.55rem; padding-top: 0.55rem; border-top: 1px solid rgb(35 31 77 / 0.12); color: #5d5890; } /* taste-skill-ignore: data-ui */
+.ui-status { flex: none; padding: 0.12rem 0.55rem; border-radius: 999px; background: rgb(255 255 255 / 0.12); white-space: nowrap; }
+.ui-status.is-new { background: var(--lavender); color: var(--navy); font-weight: 600; }
+
+/* Phones */
+.ui-phone {
+  display: flex; flex-direction: column; gap: 0.7rem;
+  width: 100%; aspect-ratio: 9 / 19.5;
+  padding: 0.6rem 0.85rem 1rem;
+  border: 7px solid #141230; border-radius: 2.4rem;
+  background: var(--paper);
+  overflow: hidden;
+}
+.ui-phone-bar { display: flex; justify-content: space-between; align-items: center; height: 1.6rem; padding: 0 0.35rem; font-weight: 600; }
+.ui-phone-island { width: 32%; height: 1.15rem; border-radius: 999px; background: #141230; }
+.ui-phone-icons { width: 1.6rem; height: 0.6rem; border-radius: 3px; background: var(--navy); }
+.ui-app-head { display: flex; align-items: center; gap: 0.5rem; padding-bottom: 0.2rem; font-size: 15px; font-weight: 600; }
+.ui-app-mark { width: 1.35rem; height: 1.35rem; color: var(--navy); }
+.ui-chat { display: flex; flex-direction: column; gap: 0.6rem; }
+.ui-bubble { max-width: 88%; padding: 0.6rem 0.75rem; border-radius: 1rem; }
+.ui-bubble-me { align-self: flex-end; background: var(--navy); color: var(--paper); border-bottom-right-radius: 0.3rem; }
+.ui-bubble-ai { align-self: flex-start; max-width: 96%; background: var(--white); border-bottom-left-radius: 0.3rem; }
+.ui-bubble-ai .ui-rows { margin-top: 0.4rem; }
+.ui-bubble-ai .ui-rows li { padding: 0.3rem 0; }
+.ui-bubble-ai .ui-rows li + li { border-top: 1px solid rgb(35 31 77 / 0.1); } /* taste-skill-ignore: data-ui */
+.ui-pill { display: inline-block; margin-top: 0.5rem; padding: 0.35rem 0.7rem; border-radius: 999px; background: var(--magenta); color: var(--white); font-weight: 500; }
+.ui-input { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding: 0.5rem 0.5rem 0.5rem 0.85rem; border-radius: 999px; background: var(--white); color: #5d5890; }
+.ui-send { width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--magenta); }
+
+.ui-screen-title { margin-top: 0.4rem; font-size: 19px; font-weight: 600; letter-spacing: -0.02em; }
+.ui-muted { margin-top: -0.4rem; color: #5d5890; }
+.ui-times { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+.ui-times span { padding: 0.55rem 0; border-radius: 0.6rem; background: var(--white); text-align: center; font-variant-numeric: tabular-nums; font-weight: 500; }
+.ui-times .is-on { background: var(--magenta); color: var(--white); }
+.ui-hint { padding: 0.55rem 0.7rem; border-radius: 0.6rem; background: var(--lavender); }
+.ui-cta { margin-top: 0.2rem; padding: 0.75rem; border-radius: 999px; background: var(--navy); color: var(--paper); text-align: center; font-weight: 600; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .ui-bubble-ai, .ui-pill { animation: ui-in 700ms var(--ease-out) both; }
+  .ui-bubble-ai { animation-delay: 1.4s; }
+  .ui-pill { animation-delay: 2.2s; }
+  .ui-times .is-on { animation: ui-pick 2.4s var(--ease-in-out) 1.2s infinite alternate; }
+}
+@keyframes ui-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes ui-pick { 0%, 60% { transform: none; } 100% { transform: scale(1.06); } }

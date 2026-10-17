@@ -1,0 +1,8 @@
+node_modules
+dist
+dist-server
+.env
+.taste-skill/inspect
+*.log
+.DS_Store
+*.tsbuildinfo

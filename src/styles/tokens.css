@@ -1,0 +1,46 @@
+/* Waygex tokens. Brand colours kept from the original site; everything downstream uses these names. */
+:root {
+  --navy: #231f4d;
+  --navy-deep: #1a1740;
+  --magenta: #c02867;
+  --lavender: #c5c0ff;
+  --gold: #bf9228;
+  --paper: #f8f6fb;
+  --mist: #ece7f5;
+  --white: #ffffff;
+
+  --bg: var(--paper);
+  --surface: var(--mist);
+  --ink: var(--navy);
+  --muted: #4b4680; /* 7:1 on paper, 6:1 on mist */
+  --accent: var(--magenta);
+  --accent-ink: var(--white);
+
+  --font: 'Switzer', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Five sizes do all the work. */
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2.25rem, 1.2rem + 3.9vw, 5rem);
+  --step-display: clamp(3.25rem, 8.6vw, 8.25rem);
+
+  --margin: clamp(1.25rem, 2.4vw, 2.25rem);
+  --gutter: clamp(1rem, 1.8vw, 1.75rem);
+  --frame: 10px;
+  --radius: 12px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --t-press: 140ms;
+  --t-hover: 180ms;
+  --t-ui: 240ms;
+  --t-reveal: 800ms;
+}
+
+@media (max-width: 47.99em) {
+  :root {
+    --frame: 8px;
+  }
+}

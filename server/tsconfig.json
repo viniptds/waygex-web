@@ -1,0 +1,24 @@
+{
+  // Compiles the API/static server (server/) plus the shared contract (shared/contact.ts)
+  // to plain ESM for Node. rootDir is the project root so the relative import
+  // `../shared/contact.js` still resolves after compilation:
+  //   dist-server/server/index.js  ->  dist-server/shared/contact.js
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node"],
+    "rootDir": "..",
+    "outDir": "../dist-server",
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./**/*.ts", "../shared/contact.ts"]
+}
